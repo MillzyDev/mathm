@@ -1,2 +1,4 @@
 # mathm
-A C/C++, header only library with various math-related functions
+A header-only double-precision mathematics library.
+
+I more or less made this, so I could "revise" whilst programming.
