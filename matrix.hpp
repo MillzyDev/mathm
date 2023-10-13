@@ -8,18 +8,20 @@ namespace mathm {
         double m21;
         double m22;
 
-        inline operator +() {
+        Matrix2x2 inline operator +() {
             ++m11;
             ++m12;
             ++m21;
             ++m22;
+            return *this;
         }
 
-        inline operator -() {
+        Matrix2x2 inline operator -() {
             --m11;
             --m12;
             --m21;
             --m22;
+            return *this;
         }
 
         inline Matrix2x2 operator +(Matrix2x2 rhs) {
@@ -84,7 +86,7 @@ namespace mathm {
         double m32;
         double m33;
 
-        inline operator +() {
+        Matrix3x3 inline operator +() {
             ++m11;
             ++m12;
             ++m13;
@@ -94,9 +96,10 @@ namespace mathm {
             ++m31;
             ++m32;
             ++m33;
+            return *this;
         }
 
-        inline operator -() {
+        Matrix3x3 inline operator -() {
             --m11;
             --m12;
             --m13;
@@ -106,6 +109,9 @@ namespace mathm {
             --m31;
             --m32;
             --m33;
+            return *this;
         }
+
+        
     };
 }
