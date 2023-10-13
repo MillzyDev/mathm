@@ -7,14 +7,16 @@ namespace mathm {
         double x;
         double y;
 
-        inline operator +() {
+        Vector2 inline operator +() {
             ++x;
             ++y;
+            return *this;
         }
 
-        inline operator -() {
+        Vector2 inline operator -() {
             --x;
             --y;
+            return *this;
         }
 
         inline Vector2 operator +(Vector2 rhs) {
@@ -41,7 +43,7 @@ namespace mathm {
         inline friend Vector2 operator *(double lhs, Vector2 rhs) {
             Vector2 ret = rhs;
             ret.x *= lhs;
-            ret.y *= rhs;
+            ret.y *= lhs;
             return ret;
         }
 
@@ -61,11 +63,11 @@ namespace mathm {
     };
 
     inline RowVector2 ColumnVector2::transpose() {
-        return *this;
+        return (RowVector2)*this;
     }
 
     inline ColumnVector2 RowVector2::transpose() {
-        return *this;
+        return (ColumnVector2)*this;
     }
 
     struct Vector3 {
@@ -73,16 +75,18 @@ namespace mathm {
         double y;
         double z;
 
-        inline operator +() {
+        Vector3 inline operator +() {
             ++x;
             ++y;
             ++z;
+            return *this;
         }
 
-        inline operator -() {
+        Vector3 inline operator -() {
             --x;
             --y;
             --z;
+            return *this;
         }
 
         inline Vector3 operator +(Vector3 rhs) {
@@ -111,9 +115,9 @@ namespace mathm {
 
         inline friend Vector3 operator *(double lhs, Vector3 rhs) {
             Vector3 ret = rhs;
-            ret.x *= rhs;
-            ret.y *= rhs;
-            ret.z *= rhs;
+            ret.x *= lhs;
+            ret.y *= lhs;
+            ret.z *= lhs;
             return ret;
         }
 
@@ -133,11 +137,11 @@ namespace mathm {
     };
 
     inline RowVector3 ColumnVector3::transpose() {
-        return *this;
+        return (RowVector3)*this;
     }
 
     inline ColumnVector3 RowVector3::transpose() {
-        return *this;
+        return (ColumnVector3)*this;
     }
 
     struct Vector {
