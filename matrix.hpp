@@ -83,5 +83,29 @@ namespace mathm {
         double m31;
         double m32;
         double m33;
+
+        inline operator +() {
+            ++m11;
+            ++m12;
+            ++m13;
+            ++m21;
+            ++m22;
+            ++m23;
+            ++m31;
+            ++m32;
+            ++m33;
+        }
+
+        inline operator -() {
+            --m11;
+            --m12;
+            --m13;
+            --m21;
+            --m22;
+            --m23;
+            --m31;
+            --m32;
+            --m33;
+        }
     };
 }
